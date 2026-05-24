@@ -8,30 +8,84 @@ data:
     <!DOCTYPE html>
     <html>
     <head>
-    <title>DevOps GitOps Demo</title>
+    <title>GitOps Demo - ArgoCD</title>
     <style>
-    body {
+      body {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
         color: white;
-        font-family: Arial, sans-serif;
+      }
+      .card {
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 40px;
         text-align: center;
-        padding: 50px;
-    }
-    h1 { font-size: 3em; }
-    .container {
-        background: rgba(0,0,0,0.7);
-        border-radius: 10px;
-        padding: 30px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        max-width: 600px;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+      }
+      .badge {
+        background: #4CAF50;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9em;
         display: inline-block;
-    }
+        margin: 10px 0;
+      }
+      code {
+        background: rgba(0,0,0,0.3);
+        padding: 2px 8px;
+        border-radius: 5px;
+        font-family: monospace;
+      }
+      .success {
+        color: #4CAF50;
+        font-weight: bold;
+      }
+      button {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #764ba2;
+      }
     </style>
     </head>
     <body>
-    <div class="container">
-        <h1>🚀 GitOps dengan ArgoCD</h1>
-        <h2>Deployed via Git + ArgoCD!</h2>
-        <p>Auto-sync: ✅ Enabled</p>
-        <p>Deployed via GitOps! 🎉</p>
+    <div class="card">
+      <h1>🚀 GitOps Success!</h1>
+      <div class="badge">Deployed with ArgoCD</div>
+      <p>This page was deployed using <strong>GitOps</strong> workflow:</p>
+      <ul style="text-align: left;">
+        <li>📝 Commit to GitHub</li>
+        <li>🔄 ArgoCD auto-sync (3 min)</li>
+        <li>☸️ Kubernetes deployment</li>
+        <li>✅ No manual kubectl needed!</li>
+      </ul>
+      <p><span class="success">✓</span> Auto-sync: <strong>ENABLED</strong></p>
+      <p><span class="success">✓</span> Self-heal: <strong>ENABLED</strong></p>
+      <p><span class="success">✓</span> Prune: <strong>ENABLED</strong></p>
+      <button onclick="alert('GitOps is awesome! 🎉')">Click to Test</button>
+      <p style="font-size: 0.8em; margin-top: 20px;">
+        <em>Last deployed via: <code>git push</code></em>
+      </p>
     </div>
+    <script>
+      console.log("GitOps Demo - Deployed from Git!");
+    </script>
     </body>
     </html>
